@@ -29,7 +29,6 @@ describe Plane do
 
   it "has landed" do
     subject.land
-    subject.landed?
     expect(subject).to be_landed
   end
 
@@ -39,7 +38,6 @@ describe Plane do
 
   it "is flying after take off" do
     subject.landed?
-    subject.take_off
     expect(subject.flying).to eq(true)
   end
 
