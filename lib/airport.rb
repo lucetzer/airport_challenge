@@ -11,13 +11,15 @@ DEFAULT_CAPACITY = 10
     @capacity = DEFAULT_CAPACITY
   end
 
-  def release_plane
+  def release_plane(plane)
     return false if empty? || stormy?
-    @planes.pop
+    plane.take_off
+    @planes.delete(plane)
   end
 
   def dock(plane)
     fail "Airport unavailable" if full? || stormy?
+    plane.land
     @planes << plane
   end
 

@@ -13,7 +13,7 @@ require 'airport'
 
 describe Airport do
 
-  let(:plane) { double :plane, flying?: true }
+  let(:plane) { double :plane, flying?: true, land: false, take_off: true }
 
   #before(:each) do
   #   allow(subject).to receive(:stormy?).and_return "sunny"
@@ -26,13 +26,13 @@ describe Airport do
     it { is_expected.to respond_to(:release_plane) }
 
     it "raises error when there are no planes available" do
-      expect(subject.release_plane).to eq(false)
+      expect(subject.release_plane(plane)).to eq(false)
     end
 
     it "releases a plane" do
       allow(subject).to receive(:stormy?) { false }
       subject.dock(plane)
-      subject.release_plane
+      subject.release_plane(plane)
       expect(subject.planes.empty?).to eq(true)
     end
   end
@@ -57,7 +57,7 @@ describe Airport do
         expect(subject.capacity).to eq Airport::DEFAULT_CAPACITY
       end
 
-       it { is_expected.to respond_to :stormy? }
+      it { is_expected.to respond_to :stormy? }
 
       it "raises an error when airport is full" do
         allow(subject).to receive(:stormy?) { false }
@@ -85,7 +85,7 @@ describe Airport do
 
       it "does not allow a plane to take off" do
         allow(subject).to receive(:stormy?).with(:forecast).and_return("stormy")
-        expect(subject.release_plane).to eq(false)
+        expect(subject.release_plane(plane)).to eq(false)
       end
 
       it "does not allow a plane to land" do
