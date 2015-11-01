@@ -7,7 +7,7 @@ describe Plane do
   it { is_expected.to respond_to :flying }
 
   it "has a flying status when created" do
-    expect(plane.flying).to eq(true)
+    expect(plane.flying).to eq true
   end
 
   describe 'plane landing' do
@@ -18,7 +18,7 @@ describe Plane do
 
     it "is not flying after landing" do
       plane.land
-      expect(plane.flying).to eq(false)
+      expect(plane.flying).to eq false
     end
 
     it "has landed" do
@@ -31,12 +31,15 @@ describe Plane do
   describe 'plane taking off' do
 
     it "can take off" do
-      is_expected.to respond_to(:take_off)
+      plane.land
+      expect(plane.flying).to eq false
+      plane.take_off
+      expect(plane.flying).to eq true
     end
 
     it "is flying after take off" do
-      subject.landed?
-      expect(subject.flying).to eq(true)
+      plane.landed?
+      expect(plane.flying).to eq true
     end
 
   end
