@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/lucetzer/airport_challenge.svg)](https://travis-ci.org/lucetzer/airport_challenge)
-
-[![Coverage Status](https://coveralls.io/repos/lucetzer/airport_challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/lucetzer/airport_challenge?branch=master)
+[![BuildStatus](https://travis-ci.org/lucetzer/airport_challenge.svg)](https://travis-ci.org/lucetzer/airport_challenge) [![CoverageStatus](https://coveralls.io/repos/lucetzer/airport_challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/lucetzer/airport_challenge?branch=master)
 
 
 Airport Challenge
