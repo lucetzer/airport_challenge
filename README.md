@@ -37,7 +37,8 @@ How to run this program
 3. For testing, run ```rspec```
 4. Create airports and planes, see example provided below.
 
-```2.2.3 :001 > airport = Airport.new
+```
+2.2.3 :001 > airport = Airport.new
  => #<Airport:0x007ff0320b9d00 @planes=[], @capacity=10, @weather=#<Weather:0x007ff0320b9c88>>
 2.2.3 :002 > plane = Plane.new
  => #<Plane:0x007ff0320b02c8 @flying=true>
